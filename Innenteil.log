@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.9.23)  18 NOV 2021 19:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/Arch Linux) (preloaded format=pdflatex 2021.9.23)  18 NOV 2021 21:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1499,14 +1499,14 @@ or `german'. on input line 35.
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: twoside 
 * h-part:(L,W,R)=(99.58464pt, 412.56497pt, 85.35826pt)
-* v-part:(T,H,B)=(85.35826pt, 688.5567pt, 71.13188pt)
+* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
 * \textwidth=412.56497pt
-* \textheight=688.5567pt
+* \textheight=702.78308pt
 * \oddsidemargin=27.31465pt
 * \evensidemargin=13.08827pt
-* \topmargin=-23.91173pt
+* \topmargin=-38.1381pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -1534,11 +1534,11 @@ Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
 \openout2 = `Titelseite.aux'.
 
  (./Titelseite.tex
-<Ursulaschule Logo.png, id=148, 336.88939pt x 134.53339pt>
-File: Ursulaschule Logo.png Graphic file (type png)
-<use Ursulaschule Logo.png>
-Package pdftex.def Info: Ursulaschule Logo.png  used on input line 15.
-(pdftex.def)             Requested size: 113.81102pt x 45.44923pt.
+<Logo_Ursulaschule_2c.pdf, id=140, 369.8859pt x 170.7168pt>
+File: Logo_Ursulaschule_2c.pdf Graphic file (type pdf)
+<use Logo_Ursulaschule_2c.pdf>
+Package pdftex.def Info: Logo_Ursulaschule_2c.pdf  used on input line 15.
+(pdftex.def)             Requested size: 227.62204pt x 105.05922pt.
 LaTeX Font Info:    Trying to load font information for U+msa on input line 18.
 
 
@@ -1565,9 +1565,9 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Ursulaschule Logo.png>])
- (./Innenteil.toc
-Overfull \hbox (14.70702pt too wide) in paragraph at lines 42--42
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Logo_Ursulaschule_2c.pdf
+>]) (./Innenteil.toc
+Overfull \hbox (14.70702pt too wide) in paragraph at lines 38--38
  [][] [][]\OT1/cmr/m/n/12 (-20) Wann sind re-la-tio-na-les Da-ten-bank-ma-nag-m
 ent-sys-tem (RDBMS) 
  []
@@ -1579,16 +1579,8 @@ ent-sys-tem (RDBMS)
  [2
 
 
-] [3] (./Innenteil.lof)
-\tf@lof=\write8
-\openout8 = `Innenteil.lof'.
-
- [4] (./Innenteil.lot)
-\tf@lot=\write9
-\openout9 = `Innenteil.lot'.
-
- [5] [6]
-Underfull \vbox (badness 4608) has occurred while \output is active []
+] [3]
+Underfull \vbox (badness 3428) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
@@ -1634,17 +1626,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--232
 (./_minted-Innenteil/default-pyg-prefix.pygstyle)
 (./_minted-Innenteil/default.pygstyle)
 (./_minted-Innenteil/57E3744FC23A4521CF8B8892E58DDD9EA99FF42D54CF316F97FF43A475
-8CC552.pygtex [6]
+8CC552.pygtex
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 2.
-) [7]
+ [6])
 \openout3 = `Innenteil.pyg'.
 
-
+ [7]
 (./_minted-Innenteil/FA37289C024327B012E7DF7D2F54BA05A99FF42D54CF316F97FF43A475
 8CC552.pygtex)
 \openout3 = `Innenteil.pyg'.
@@ -1656,21 +1648,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--292
 
  []
 
-[8]
-<../Quellen/key value Datenbank verteilt.png, id=313, 612.78937pt x 450.9347pt>
+<../Quellen/key value Datenbank verteilt.png, id=272, 612.78937pt x 450.9347pt>
 
 File: ../Quellen/key value Datenbank verteilt.png Graphic file (type png)
 <use ../Quellen/key value Datenbank verteilt.png>
 Package pdftex.def Info: ../Quellen/key value Datenbank verteilt.png  used on i
 nput line 295.
 (pdftex.def)             Requested size: 288.79422pt x 212.5173pt.
- [9pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
- has been already used, duplicate ignored
+[8] [9pdfTeX warning (ext4): destination with the same identifier (name{figure.
+1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.308 					\item S
-                  ie ist eine \ac{KVDB}. <../Quellen/key value Datenbank vertei
-lt.png (PNG copy)>]
+l.309 					\item D
+                  ie Werte der Schlüssel sind Datenobjekte und werden Dokum...
+ <../Quellen/key value Datenbank verteilt.png (PNG copy)>]
 \openout4 = `Innenteil.pyg'.
 
 
@@ -1703,7 +1694,7 @@ E3BBE7.pygtex)
 032ADC.pygtex)
 \openout3 = `Innenteil.pyg'.
 
- [10]
+
 (./_minted-Innenteil/59269C4631F99CFAD456A9D55D58ABB4735E3D944CD3F42850B4E15621
 E3BBE7.pygtex)
 \openout4 = `Innenteil.pyg'.
@@ -1735,12 +1726,16 @@ D32DF4.pygtex)
 
 
 (./_minted-Innenteil/F248824F8890B67C06092B71E4797AB4ACBB5B7006F56693EE8B2E8885
-D32DF4.pygtex) [11]
+D32DF4.pygtex) [10]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
 (hyperref)                than one, level fixed on input line 361.
 
-[12] (./Innenteil.bbl [7
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+[12] (./Innenteil.bbl [13
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 73--78
@@ -1772,7 +1767,7 @@ Overfull \hbox (44.01526pt too wide) in paragraph at lines 113--117
 -[]auf-[]dem-[]Smartphone .
  []
 
-) [8]
+) [14]
 \openout4 = `Innenteil.pyg'.
 
 
@@ -1783,62 +1778,42 @@ E3BBE7.pygtex)
 
 (./_minted-Innenteil/6D9769BB2D5A14F23306E69729FB02FD735E3D944CD3F42850B4E15621
 E3BBE7.pygtex)
-Underfull \vbox (badness 7238) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.406 		\item D
-               aten werden in key-value-Paaren gespeichert [1]pdfTeX warning (e
-xt4): destination with the same identifier (name{page.2}) has been already used
-, duplicate ignored
-<to be read again> 
-                   \relax 
-l.414 \newpage
-               [2]
+ [15]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 418--419
 
  []
 
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.423 \end{document}
-                     [3] (./Innenteil.aux (./Titelseite.aux) (./Innenteil.acr))
+[17] (./Innenteil.aux (./Titelseite.aux) (./Innenteil.acr))
 Package rerunfilecheck Info: File `Innenteil.out' has not changed.
-(rerunfilecheck)             Checksum: 46743C8587E8DCE094C80E397977B201;5749.
+(rerunfilecheck)             Checksum: 90826044242F884910969ADB0B20E949;5457.
 runsystem(rm Innenteil.pyg)...executed.
 
  ) 
 Here is how much of TeX's memory you used:
- 25188 strings out of 478994
- 470796 string characters out of 5864751
- 1125799 words of memory out of 5000000
- 41918 multiletter control sequences out of 15000+600000
- 420687 words of font info for 150 fonts, out of 8000000 for 9000
+ 25119 strings out of 478994
+ 469912 string characters out of 5864751
+ 1124798 words of memory out of 5000000
+ 41884 multiletter control sequences out of 15000+600000
+ 418066 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 88i,12n,94p,1433b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
-st, replaced by a fixed one
-
-{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/sh
-are/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/ty
-pe1/public/cm-super/sfrm1200.pfb>
-Output written on Innenteil.pdf (23 pages, 289213 bytes).
+ 88i,12n,94p,1434b,778s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/s
+hare/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmtt10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb
+>
+Output written on Innenteil.pdf (20 pages, 254546 bytes).
 PDF statistics:
- 455 PDF objects out of 1000 (max. 8388607)
- 409 compressed objects within 5 object streams
- 100 named destinations out of 1000 (max. 500000)
- 32043 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 414 PDF objects out of 1000 (max. 8388607)
+ 376 compressed objects within 4 object streams
+ 93 named destinations out of 1000 (max. 500000)
+ 25883 words of extra memory for PDF output out of 29859 (max. 10000000)
 
