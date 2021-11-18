@@ -300,7 +300,7 @@ db.restaurants.find( {"name" : "Simon" } );
 		Die Datenbank in \autoref{fig:key-value-datenbank-verteilt} beruht auf drei Clustern. In dem Master-Cluster übernimmt eine Node das Hashing und das Verteilen der Schlüssel auf die anderen Nodes, während die anderen Nodes die key-value-Paare In-Memory, sprich im RAM, speichern. Nebei spiegeln sie die key-value-Paare auf das erste Slave-Cluster, zur persistenten Speicherung. Das zweite Slave-Cluster ist ein Kopie des ersten, das für komplexe Abfragen genutzt werden kann ohne die Performance der Datenbank negativ zu beeinflussen.
 		
 		\subsection{Dokument-Datenbanken}
-			Eine weitere NoSQL Datenbank sind die sogenannten \acp{DDB}. Sie verbinden die \acp{KVDB} mit der Möglichkeit eine Strukturierung der Daten vorzunehmen.  Dafür basieren sie auf zwei Stufen. Die erste Stufe ist praktisch eine \ac{KVDB}, die allerdings keine Datenobjekte sondern Dokumente speichert. Diese Dokumente sind Datensätze mit strukturieden Daten, zum Beispiel im \ac{JSON}-Format.
+			Eine weitere NoSQL Datenbank sind die sogenannten \acp{DDB}. Sie verbinden die \acp{KVDB} mit der Möglichkeit eine Strukturierung der Daten vorzunehmen.  Dafür basieren sie auf zwei Stufen. Die erste Stufe ist praktisch eine \ac{KVDB}, die allerdings keine Datenobjekte, sondern Dokumente speichert. Diese Dokumente sind Datensätze mit strukturieden Daten, zum Beispiel im \ac{JSON}-Format.
 			
 			\subsubsection{Eigenschaften}
 				Als \acf{DDB} wird eine Datenbank bezeichnet die folgende Eigenschaften erfüllt:
