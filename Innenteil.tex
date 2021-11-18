@@ -286,7 +286,7 @@ db.restaurants.find( {"name" : "Simon" } );
 		\end{itemize}
 		
 		\ac{KVDB} sind sehr beliebte NoSQL-Datenbanken. Das liegt vorallem daran, dass sie sehr gut skalierbar sind. Zudem müssen keine Integritätsbedingungen überprüft werden, was eine höchst performante Datenspeicherung und Abfrage ermöglicht. \\
-		Um \ac{KVDB} noch performanter zu gestalten wird auf ein Verbund von Caching und Sharding gesetzt.\\
+		Um \ac{KVDB} noch performanter zu gestalten, wird auf ein Verbund von Caching und Sharding gesetzt.\\
 		Beim Caching werden regelmäßig oder kürzlich abgefragte bzw. gespeicherte key-value-Paare im RAM gespeichert bevor sie in den langfristigen und persistenten Hintergrundspeicher abgelegt werden.\\
 		Um die Datenbank horizontal, das heißt über mehrere Servernodes, zu skalieren wird die Datenbank in einzelne Teile aufgeteilt. Dieser Prozess wird Sharding genannt. Eine Node, auch Shard genannt, ist dabei für einen festgelegten Raum der Schlüssel zuständig. \\
 		
