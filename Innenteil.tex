@@ -70,24 +70,24 @@ basicstyle=\small}
 \nocite{*}
 
 	\subsection{Datenmengen in unserer Welt}
-		Mittlerweile erhebt fast jedes Gerät Daten. Sei es die Waschmaschine, die sich über Smart Home Dienste aus der Cloud steuern lässt, die Maschinen in der Industrie, die penibel sämtliche Daten, wie Produktionsmengen, Temperaturen oder Ausschussmengen festhalten oder unser Smartphone das unsere Suchanfragen oder Bewegungsprofile speichert. Dazu kommen Daten die die Menschen bewusst erstellen, wie zum Beispiel Filme, Fotos oder Dokumente wie Schriftstücke oder aber auch Präsentationen. 
+		Mittlerweile erhebt fast jedes Gerät Daten. Sei es die Waschmaschine, die sich über Smart Home Dienste aus der Cloud steuern lässt, die Maschinen in der Industrie, die penibel sämtliche Daten, wie Produktionsmengen, Temperaturen oder Ausschussmengen festhalten oder unser Smartphone, das unsere Suchanfragen oder Bewegungsprofile speichert. Dazu kommen Daten die, die Menschen bewusst erstellen, wie zum Beispiel Filme, Fotos oder Dokumente wie Schriftstücke oder aber auch Präsentationen. 
 		So hat ein durchschnittlicher Deutscher 1070 Fotos auf seinem Smartphone. Damit ist Deutschland auf Platz 8 weltweit.\cite{Fotos:Thiele}
-		Dadurch verdoppelt sich der Datenbestand alle zwei Jahre. 2020 lag er bei etwa 40 Zettabytes. Bis 2025 sollen es schätzungsweise 163 Zettabytes werden.%\cite{DataAge:Peinsel}
+		Dadurch das immer mehr Daten gespeichert werden verdoppelt sich der Datenbestand alle zwei Jahre. 2020 lag er bei etwa 40 Zettabytes. Bis 2025 sollen es schätzungsweise 163 Zettabytes werden.%\cite{DataAge:Peinsel}
 		\begin{quote}
 			"`40 Zettabytes – das entspricht nach Schätzungen der Forscher 57-mal der Menge an Sandkörnern aller Strände der Erde." \cite{Datenvolumen:Juengling}
 		\end{quote}
 		Zudem basiert unsere Gesellschaft mehr und mehr auf den erhobenen Daten. Unternehmen treffen wichtige Geschäftsentscheidungen auf Basis der erhobenen Daten ihrer Produktion, Amazon schlägt Artikel basierend auf dem eigenen Kaufverhalten oder dem anderer Kunden vor und Google Maps berücksichtigt bei der Routenführung den voraussichtlichen Verkehr auf der Strecke.\cite{DataAge:Peinsel}
 		
 	\subsection{Was sind Datenbanken und warum brauchen wir sie?}
-		Datenbanksysteme sind Programme zur digitalen Verwaltung von Daten. Ein Datenbanksystem sorgt für eine effizient, dauerhafte und fehlerfrei Speicherung der Daten und stellt sie bei Bedarf zur Verfügung. \\
-		Datenbanken werden benötigt wenn ein oder mehrere Programme Zugriff auf ein zentralen Datensatz brauchen. 
+		Datenbanksysteme sind Programme zur digitalen Verwaltung von Daten. Ein Datenbanksystem sorgt für eine effizient, dauerhafte und fehlerfreie Speicherung der Daten und stellt sie bei Bedarf zur Verfügung. \\
+		Datenbanken werden benötigt, wenn ein oder mehrere Programme Zugriff auf einen zentralen Datensatz brauchen. 
 
 \section{Varianten von Datenbanken}
 	Für verschiedene Anwendungsbereiche bedarf es unterschiedlicher Strukturierung der Daten.\\
-	So gibt es zum Beispiel Anwendungsfälle bei denen eine feste Struktur der Daten vorauszusehen ist. So erfasst eine Maschine zum Beispiel für jede Schicht die Anzahl der verpackten Gutteile, den Ausschuss und das verarbeitete Material. In einem anderen Anwendungsfall weisen die Datenpunkte beispielsweise eine sehr hohe oder sehr niedrigen bis nicht vorhandenen Anzahl an Verknüpfungen untereinander auf.
-	Deshalb unterscheidet man zwei grundlegende Kategorien von Datenbanksystemen. Die \textbf{relationalen} und die \textbf{nicht relationale} Datenbanken.
+	So gibt es zum Beispiel Anwendungsfälle bei denen eine feste Struktur der Daten vorauszusehen ist. So erfasst eine Maschine zum Beispiel für jede Schicht die Anzahl der verpackten Gutteile, den Ausschuss und das verarbeitete Material. In einem anderen Anwendungsfall weisen die Datenpunkte beispielsweise eine sehr hohe oder sehr niedrige bis nicht vorhandene Anzahl an Verknüpfungen untereinander auf.
+	Deshalb unterscheidet man zwei grundlegende Kategorien von Datenbanksystemen. Die \textbf{relationalen} und die \textbf{nicht relationalen} Datenbanken.
 	\subsection{SQL - relationale Datenbanken}
-		Bei den weitverbreiteten relationalen Datenbanken werden Daten nach einem tabellarischen Schema abgelegt, das heißt es werden Daten basierend auf Schlüsseln in Verbindung gebracht. Durch ein sorgfältig gewähltes Schema werden Redundanzen vermieden und eine effiziente Speicherung ermöglicht. SQL-Datenbanken eignen sich folglich besonders gut für Daten, die eine logische Verknüpfung zueinander aufweisen. Die Datenbank läuft auf einem einzigen Server, sprich um die Leistung der Datenbank zu erhöhen muss die Leistung des Servers erhöht werden. Man spricht hierbei von vertikalen Skaling. 
+		Bei den weitverbreiteten relationalen Datenbanken werden Daten nach einem tabellarischen Schema abgelegt, das heißt es werden Daten basierend auf Schlüsseln in Verbindung gebracht. Durch ein sorgfältig gewähltes Schema werden Redundanzen vermieden und eine effiziente Speicherung ermöglicht. SQL-Datenbanken eignen sich folglich besonders gut für Daten, die eine logische Verknüpfung zueinander aufweisen. Die Datenbank läuft auf einem einzigen Server, sprich, um die Leistung der Datenbank zu erhöhen, muss die Leistung des Servers erhöht werden. Man spricht hierbei von vertikalem Skaling. 
 		\cite{ibm-sql-nosql}\cite{Meier:SQLNoSQLDatenbanken}
 	\subsection{NoSQL - nicht relationale Datenbanken}
 		NoSQL\textit{, zu Deutsch „Nicht nur SQL“, }beschreibt eine nicht relationale Speicherung von Daten. Die Speicherung beruht dabei nicht auf einem festen Tabellenschemata. Unterkategorien der \ac{nRDBMS} sind dokumentbasierte, Key-Value basierte oder aber auch graphbasierend Datenbanken. Im Gegensatz zu SQL-Datenbanksystemen können NoSQL sehr gut mit großen Datenmengen und häufigen Zugriffen umgehen. NoSQL Datenbanken sind dabei horizontal skalierbar, das heißt die Datenbank läuft auf mehreren Servern, auch Nodes genannt. So lässt sich die Last verteilen, eine Ausfallsicherheit gewährleisten oder die Leistung der Datenbank durch einfaches hinzufügen einer Node verbessern. 
