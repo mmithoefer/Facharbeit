@@ -394,19 +394,19 @@ MDB_DSN=mongodb+srv://<username>:<password>@<Clustername>.mongodb.net/
 
 \subsection{MongoDB Entwicklungsdatenbank in der Cloud hosten}
 
-Zu Entwicklung- und Testzwecken lässt sich eine MongoDB Datenbank einfach und kostenfrei in der Cloud hosten. Dazu zu \url{https://www.mongodb.com/cloud/atlas} gehen und ein Konto erstellen. Nach dem ersten anmelden müssen ein paar Fragen beantwortet werden wie man plant MongoDB zu nutzen. Danach wählt man aus den Deployment Optionen Shared aus. Als Cloudprovider wird der Provider der Wahl ausgewählt und ein Standort gewählt der nahe der eigenen geographischen Lage ist. Die restlichen Einstellungen können auf den Standardeinstellungen belassen werden. Das sind, Stand 17.11.2021, Cluster Tier: M0 Sandbox(Shared RAM, 512MB Storage), Additional Settings: MongoDB 4.4, No Backup und Cluster Name: Cluster0. Hat man das Cluster erstellt dauert es ein paar Minuten bis es zur Verfügung steht. Steht das Cluster zur Vefügung geht man auf den Punkt Connect und fügt durch einen Klick auf Add Your Current IP Address seine IP Adresse zu der Whitelist der IP Adressen hinzu, die sich mit dem Cluster verbinden dürfen. Danach wird ein Datenbanknutzer erstellt. Danach wählt man unter den Verbindungsoptionen MondoDB Connect aus und kopiert den connection string in das Feld \mintinline{console}{DB_DSN} in der .env Datei. das Feld \mintinline{console}{DB_Database} wird mit dem gewünschten Datenbanknamen ausgefüllt.
+Zu Entwicklung- und Testzwecken lässt sich eine MongoDB Datenbank einfach und kostenfrei in der Cloud hosten. Dazu zu \url{https://www.mongodb.com/cloud/atlas} gehen und ein Konto erstellen. Nach dem ersten Anmelden müssen ein paar Fragen beantwortet werden, wie man plant MongoDB zu nutzen. Danach wählt man aus den Deployment Optionen Shared aus. Als Cloudprovider wird der Provider der Wahl ausgewählt und ein Standort gewählt, der nahe der eigenen geographischen Lage ist. Die restlichen Einstellungen können auf den Standardeinstellungen belassen werden. Das sind, Stand 17.11.2021, Cluster Tier: M0 Sandbox(Shared RAM, 512MB Storage), Additional Settings: MongoDB 4.4, No Backup und Cluster Name: Cluster0. Hat man das Cluster erstellt, dauert es ein paar Minuten bis es zur Verfügung steht. Steht das Cluster zur Vefügung geht man auf den Punkt Connect und fügt durch einen Klick auf Add Your Current IP Address seine IP Adresse zu der Whitelist der IP Adressen hinzu, die sich mit dem Cluster verbinden dürfen. Danach wird ein Datenbanknutzer erstellt. Dann wählt man unter den Verbindungsoptionen MondoDB Connect aus und kopiert den connection string in das Feld \mintinline{console}{DB_DSN} in der .env Datei. das Feld \mintinline{console}{DB_Database} wird mit dem gewünschten Datenbanknamen ausgefüllt.
 
 \subsection{Postman API Client}
 
-Postman bietet eine Möglichkeit API's leicht mit einer grafischen Oberfläche zu testen. Postman ist erhältlich über den Pakagemanger der Wahl oder unter \url{https://app.getpostman.com/app/download/win64}. In der Oberfläche von Postman lässt sich die HTML Methoden und eine URL angeben. Unter dem Punkt Header muss der Eintrage Accept - application/json ergänzt werden. Im Body lassen sich bei Bedarf zum Beispiel JSON-Daten mitschicken.
+Postman bietet eine Möglichkeit API's leicht mit einer grafischen Oberfläche zu testen. Postman ist erhältlich über den Pakagemanger der Wahl oder unter \url{https://app.getpostman.com/app/download/win64}. In der Oberfläche von Postman lässt sich die HTML Methoden und eine URL angeben. Unter dem Punkt Header muss der Eintrag Accept - application/json ergänzt werden. Im Body lassen sich bei Bedarf zum Beispiel JSON-Daten mitschicken.
 
 \subsection{JSON}
 	JSON ist die Abkürzung für \textbf{J}ava\textbf{S}cript\textbf{O}bject\textbf{N}otation. Die Syntax ist identisch zu dem Code von Objekten in JavaScript. Es gelten folgende Regel:
 	\begin{itemize}
 		\item Daten werden in key-value-Paaren gespeichert
 		\item Daten werden mit Kommata getrennt.
-		\item geschwungene Klammern werden verwendet um Objekte zu speichern.
-		\item eckige Klammern werden verwendet um Array zu speicher.
+		\item Geschwungene Klammern werden verwendet um Objekte zu speichern.
+		\item Eckige Klammern werden verwendet um Array zu speicher.
 	\end{itemize}
 
 \cite{w3json}
