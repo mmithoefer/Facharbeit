@@ -281,11 +281,11 @@ db.restaurants.find( {"name" : "Simon" } );
 		Eine \ac{KVDB} efüllt folgende Eigenschaften:
 		\begin{itemize}
 			\item Eine Menge von referenzierbaren Datenobjekten, den Schlüsseln, ist festgelegt.
-			\item Zu jedem Schlüssel gibt es immer genau ein Datenobjekt das den dem Schlüssel zugeordneten Wert repräsentiert.
+			\item Zu jedem Schlüssel gibt es immer genau ein Datenobjekt, das den dem Schlüssel zugeordneten Wert repräsentiert.
 			\item Mittels des Schlüssels lässt sich der zugehörige Wert abrufen.
 		\end{itemize}
 		
-		\ac{KVDB} sind sehr beliebte NoSQL-Datenbanken. Das liegt vorallem daran das sie sehr gut skalierbar sind. Zudem müssen keine Integritätsbedingungen überprüft werden, was eine höchst performante Datenspeicherung und Abfrage ermöglicht. \\
+		\ac{KVDB} sind sehr beliebte NoSQL-Datenbanken. Das liegt vorallem daran, dass sie sehr gut skalierbar sind. Zudem müssen keine Integritätsbedingungen überprüft werden, was eine höchst performante Datenspeicherung und Abfrage ermöglicht. \\
 		Um \ac{KVDB} noch performanter zu gestalten wird auf ein Verbund von Caching und Sharding gesetzt.\\
 		Beim Caching werden regelmäßig oder kürzlich abgefragte bzw. gespeicherte key-value-Paare im RAM gespeichert bevor sie in den langfristigen und persistenten Hintergrundspeicher abgelegt werden.\\
 		Um die Datenbank horizontal, das heißt über mehrere Servernodes, zu skalieren wird die Datenbank in einzelne Teile aufgeteilt. Dieser Prozess wird Sharding genannt. Eine Node, auch Shard genannt, ist dabei für einen festgelegten Raum der Schlüssel zuständig. \\
