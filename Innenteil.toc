@@ -9,7 +9,7 @@
 \acswitchoff 
 \babel@toc {ngerman}{}
 \babel@toc {ngerman}{}
-\contentsline {section}{Abkürzungsverzeichnis}{III}{section*.10}%
+\contentsline {section}{Abkürzungsverzeichnis}{II}{section*.10}%
 \contentsline {section}{\numberline {1}Einführung}{1}{section.1}%
 \contentsline {subsection}{\numberline {1.1}Datenmengen in unserer Welt}{1}{subsection.1.1}%
 \contentsline {subsection}{\numberline {1.2}Was sind Datenbanken und warum brauchen wir sie?}{1}{subsection.1.2}%
