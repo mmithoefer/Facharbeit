@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{g+go}{composer require jenssegers/mongodb}
+\end{Verbatim}

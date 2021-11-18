@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{x}{\PYGZsq{}mongodb\PYGZsq{} =\PYGZgt{} [}
+\PYG{x}{	\PYGZsq{}driver\PYGZsq{} =\PYGZgt{} \PYGZsq{}mongodb\PYGZsq{},}
+\PYG{x}{	\PYGZsq{}dsn\PYGZsq{} =\PYGZgt{} env(\PYGZsq{}MDB\PYGZus{}DSN\PYGZsq{}),}
+\PYG{x}{	\PYGZsq{}database\PYGZsq{} =\PYGZgt{} env(\PYGZsq{}MDB\PYGZus{}DATABASE\PYGZsq{}, \PYGZsq{}homestead\PYGZsq{}),}
+\PYG{x}{],}
+\end{Verbatim}

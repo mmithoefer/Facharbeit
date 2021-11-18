@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{db}\PYG{p}{.}\PYG{n}{schueler}\PYG{p}{.}\PYG{n}{save}\PYG{p}{(} \PYG{err}{\PYGZob{}} \PYG{n}{schueler\PYGZus{}no}\PYG{p}{:} \PYG{l+s+ss}{\PYGZdq{}123456\PYGZdq{}}\PYG{p}{,} \PYG{n}{abiturdatum}\PYG{p}{:} \PYG{l+s+ss}{\PYGZdq{}12/12/2123\PYGZdq{}}\PYG{p}{,}
+\PYG{n}{jahrgang}\PYG{p}{:}\PYG{l+m+mi}{7} \PYG{err}{\PYGZcb{}} \PYG{p}{);}
+\PYG{n}{db}\PYG{p}{.}\PYG{n}{schueler}\PYG{p}{.}\PYG{n}{save}\PYG{p}{(} \PYG{err}{\PYGZob{}} \PYG{n}{schueler\PYGZus{}no}\PYG{p}{:} \PYG{l+s+ss}{\PYGZdq{}789\PYGZdq{}}\PYG{p}{,} \PYG{n}{abiturdatum}\PYG{p}{:} \PYG{l+s+ss}{\PYGZdq{}12/12/1989\PYGZdq{}}\PYG{p}{,}
+\PYG{n}{name}\PYG{p}{:}\PYG{l+s+ss}{\PYGZdq{}Simon\PYGZdq{}} \PYG{err}{\PYGZcb{}} \PYG{p}{);}
+\end{Verbatim}

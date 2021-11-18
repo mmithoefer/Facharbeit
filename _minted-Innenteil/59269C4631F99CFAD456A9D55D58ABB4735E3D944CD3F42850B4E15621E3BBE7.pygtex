@@ -1,0 +1,5 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{g+go}{MDB\PYGZus{}CONNECTION=mongodb}
+\PYG{g+go}{MDB\PYGZus{}DATABASE=\PYGZlt{}Datenbankname\PYGZgt{}}
+\PYG{g+go}{MDB\PYGZus{}DSN=mongodb+srv://\PYGZlt{}username\PYGZgt{}:\PYGZlt{}password\PYGZgt{}@\PYGZlt{}Clustername\PYGZgt{}.mongodb.net/}
+\end{Verbatim}

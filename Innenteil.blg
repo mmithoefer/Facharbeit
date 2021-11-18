@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99d (TeX Live 2021/Arch Linux)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: Innenteil.aux
+A level-1 auxiliary file: Titelseite.aux
+The style file: plainurl.bst
+Reallocated glb_str_ptr (elt_size=8) to 20 items from 10.
+Reallocated global_strs (elt_size=200001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=8) to 20 items from 10.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Reallocated singl_function (elt_size=8) to 100 items from 50.
+Database file #1: bibba.bib
+Warning--entry type for "strozziNoSQL" isn't style-file defined
+--line 130 of file bibba.bib
+Warning--entry type for "acid-bigdata" isn't style-file defined
+--line 147 of file bibba.bib
+Warning--entry type for "ibm-sql-nosql" isn't style-file defined
+--line 156 of file bibba.bib
+Warning--entry type for "mogodb-lara" isn't style-file defined
+--line 165 of file bibba.bib
+Warning--entry type for "w3json" isn't style-file defined
+--line 175 of file bibba.bib
+Warning--empty publisher in Meier:SQLNoSQLDatenbanken
+Warning--empty year in Meier:SQLNoSQLDatenbanken
+Warning--empty journal in DataAge:Peinsel
+Warning--empty year in DataAge:Peinsel
+Warning--empty journal in gehani1990introduction
+Warning--empty journal in Datenvolumen:Juengling
+Warning--empty journal in permana2021performance
+Warning--empty journal in Fotos:Thiele
+Warning--empty year in Fotos:Thiele
+You've used 22 entries,
+            2882 wiz_defined-function locations,
+            734 strings with 8097 characters,
+and the built_in function-call counts, 8038 in all, are:
+= -- 787
+> -- 255
+< -- 3
++ -- 94
+- -- 68
+* -- 334
+:= -- 1136
+add.period$ -- 65
+call.type$ -- 22
+change.case$ -- 96
+chr.to.int$ -- 0
+cite$ -- 31
+duplicate$ -- 253
+empty$ -- 841
+format.name$ -- 68
+if$ -- 2158
+int.to.chr$ -- 0
+int.to.str$ -- 22
+missing$ -- 19
+newline$ -- 111
+num.names$ -- 44
+pop$ -- 258
+preamble$ -- 1
+purify$ -- 77
+quote$ -- 0
+skip$ -- 633
+stack$ -- 0
+substring$ -- 233
+swap$ -- 38
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 82
+warning$ -- 9
+while$ -- 58
+width$ -- 24
+write$ -- 215
+(There were 14 warnings)

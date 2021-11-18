@@ -1,0 +1,123 @@
+\begin{thebibliography}{10}
+
+\bibitem{ali2019comparison}
+Wajid Ali, Muhammad~Usman Shafique, Muhammad~Arslan Majeed, and Ali Raza.
+\newblock Comparison between sql and nosql databases and their relationship
+  with big data analytics.
+\newblock {\em Asian Journal of Research in Computer Science}, pages 1--10,
+  2019.
+
+\bibitem{Meier:SQLNoSQLDatenbanken}
+Michael~Kaufmann Andreas~Meier.
+\newblock {\em SQL- und NoSQL-Datenbanken}.
+
+\bibitem{ibm-sql-nosql}
+Brad~Nicholson Benjamin~Anderson.
+\newblock Sql vs. nosql databases: Whats the difference?
+\newblock URL: \url{https://www.ibm.com/cloud/blog/sql-vs-nosql}.
+
+\bibitem{codd2002relational}
+Edgar~F Codd.
+\newblock A relational model of data for large shared data banks.
+\newblock In {\em Software pioneers}, pages 263--294. Springer, 2002.
+
+\bibitem{codd1972relational}
+Edgar~F Codd et~al.
+\newblock {\em Relational completeness of data base sublanguages}.
+\newblock Citeseer, 1972.
+
+\bibitem{darwen2009introduction}
+Hugh Darwen.
+\newblock {\em An introduction to relational database theory}.
+\newblock Bookboon, 2009.
+
+\bibitem{DataAge:Peinsel}
+John~Rydning David~Peinsel, John~Ganrt.
+\newblock Data age 2025: The evolution of data to life-critical.
+
+\bibitem{mogodb-lara}
+MongoDB Dokumentation.
+\newblock Mongodb and laravel integration.
+\newblock URL:
+  \url{https://www.mongodb.com/compatibility/mongodb-laravel-intergration}.
+
+\bibitem{fowler2016teaching}
+Brad Fowler, Joy Godin, and Margaret Geddy.
+\newblock Teaching case: introduction to nosql in a traditional database
+  course.
+\newblock {\em Journal of Information Systems Education}, 27(2):99, 2016.
+
+\bibitem{gajendran2012survey}
+Santhosh~Kumar Gajendran.
+\newblock A survey on nosql databases.
+\newblock {\em University of Illinois}, 2012.
+
+\bibitem{gehani1990introduction}
+Narain Gehani.
+\newblock Introduction to database systems.
+\newblock 1990.
+
+\bibitem{hammes2014comparison}
+Dayne Hammes, Hiram Medero, and Harrison Mitchell.
+\newblock Comparison of nosql and sql databases in the cloud.
+\newblock {\em Proceedings of the Southern Association for Information Systems
+  (SAIS), Macon, GA}, pages 21--22, 2014.
+
+\bibitem{he2015survey}
+Changlin He.
+\newblock Survey on nosql database technology.
+\newblock {\em Journal of Applied Science and Engineering Innovation Vol},
+  2(2):50--54, 2015.
+
+\bibitem{Datenvolumen:Juengling}
+Thomas Jüngling.
+\newblock Datenvolumen verdoppelt sich alle zwei jahre.
+\newblock 07 2013.
+\newblock URL:
+  \url{https://www.welt.de/wirtschaft/webwelt/article118099520/Datenvolumen-verdoppelt-sich-alle-zwei-Jahre.html}.
+
+\bibitem{acid-bigdata}
+Dipl.-Ing. (FH)~Stefan Luber.
+\newblock Was ist acid?
+\newblock URL: \url{https://www.bigdata-insider.de/was-ist-acid-a-776182/}.
+
+\bibitem{moor2001introduction}
+Ian Moor.
+\newblock An introduction to sql and postgresql, 2001.
+
+\bibitem{nayak2013type}
+Ameya Nayak, Anil Poriya, and Dikshay Poojary.
+\newblock Type of nosql databases and its comparison with relational databases.
+\newblock {\em International Journal of Applied Information Systems},
+  5(4):16--19, 2013.
+
+\bibitem{permana2021performance}
+Putu Adi~Guna Permana and Evi Triandini.
+\newblock Performance with eloquent and query builder in crowdfunding system
+  with laravel framework.
+\newblock 2021.
+
+\bibitem{sharma2012sql}
+Vatika Sharma and Meenu Dave.
+\newblock Sql and nosql databases.
+\newblock {\em International Journal of Advanced Research in Computer Science
+  and Software Engineering}, 2(8), 2012.
+
+\bibitem{strozziNoSQL}
+Carlo Strozzi.
+\newblock Nosql: a non-sql rdbms.
+\newblock URL:
+  \url{http://www.strozzi.it/cgi-bin/CSA/tw7/I/en_US/nosql/Home%20Page}.
+
+\bibitem{Fotos:Thiele}
+Antonia Thiele.
+\newblock Deutsche speichern mehr als 1000 fotos auf dem handy.
+\newblock URL:
+  \url{https://www.welt.de/wirtschaft/article202489422/Handybilder-Deutsche-speichern-mehr-als-1000-Fotos-auf-dem-Smartphone.html}.
+
+\bibitem{w3json}
+W3.CSS.
+\newblock What is json?
+\newblock URL: \url{https://www.w3schools.com/whatis/whatis_json.asp}.
+
+\end{thebibliography}

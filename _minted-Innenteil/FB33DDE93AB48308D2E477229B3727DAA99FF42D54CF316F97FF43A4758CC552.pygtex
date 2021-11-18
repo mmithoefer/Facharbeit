@@ -1,0 +1,3 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{db}\PYG{p}{.}\PYG{n}{restaurants}\PYG{p}{.}\PYG{n}{find}\PYG{p}{(} \PYG{err}{\PYGZob{}}\PYG{l+s+ss}{\PYGZdq{}name\PYGZdq{}} \PYG{p}{:} \PYG{l+s+ss}{\PYGZdq{}Simon\PYGZdq{}} \PYG{err}{\PYGZcb{}} \PYG{p}{);}
+\end{Verbatim}
