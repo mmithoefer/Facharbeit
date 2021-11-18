@@ -1,0 +1,427 @@
+% !TeX spellcheck = de_DE
+\documentclass[12pt, a4paper, twoside]{article}
+%die Pakete werden hier durch den Include-Befehl separat eingelesen
+\include{Pakete}
+\include{acc}
+
+
+
+\lstset{language=R}
+\lstset{basicstyle=\ttfamily,
+basicstyle=\small}
+\lstset{literate=%
+  {Ö}{{\"O}}1
+  {Ä}{{\"A}}1
+  {Ü}{{\"U}}1
+  {ß}{{\ss}}1
+  {ü}{{\"u}}1
+  {ä}{{\"a}}1
+  {ö}{{\"o}}1
+}
+
+\title{\textbf{Titel der Arbeit}}
+\author{Max Mustermann}
+
+\setlength{\parindent}{0cm} %keine Einrückung
+\linespread{1.5} 
+
+\newpage
+\newpage
+%in alphabetischer Reihenfolge
+
+\bibliography{bibba.bib}
+
+\newcounter{SeitenzahlSpeicher}
+\begin{document}
+\include{Titelseite}
+
+\begin{spacing}{1}
+\pagenumbering{Roman}
+\setcounter{page}{2}
+\tableofcontents
+\end{spacing}
+\newpage
+\begin{spacing}{1}
+\section*{Abbildungsverzeichnis} 
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\renewcommand{\listfigurename}{}
+\listoffigures
+\end{spacing}
+\newpage
+\section*{Tabellenverzeichnis} 
+\addcontentsline{toc}{section}{Tabellenverzeichnis} 
+\renewcommand{\listtablename}{}
+\listoftables % Tabellenverzeichnis
+\footnote{Alle Tabellen wurden eigenständig erstellt, siehe \emph{R}-Code} 
+\newpage
+
+\section*{Abkürzungsverzeichnis} 
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\printacronyms[include=abbrev,name=Abkürzungen]
+\newpage
+\clearpage
+\setcounter{SeitenzahlSpeicher}{\value{page}}
+\pagenumbering{arabic}
+\newpage
+\pagenumbering{arabic}
+
+\section{Einführung}
+
+\nocite{*}
+
+	\subsection{Datenmengen in unserer Welt}
+		Mittlerweile erhebt fast jedes Gerät Daten. Sei es die Waschmaschine, die sich über Smart Home Dienste aus der Cloud steuern lässt, die Maschinen in der Industrie, die penibel sämtliche Daten, wie Produktionsmengen, Temperaturen oder Ausschussmengen festhalten oder unser Smartphone das unsere Suchanfragen oder Bewegungsprofile speichert. Dazu kommen Daten die die Menschen bewusst erstellen, wie zum Beispiel Filme, Fotos oder Dokumente wie Schriftstücke oder aber auch Präsentationen. 
+		So hat ein durchschnittlicher Deutscher 1070 Fotos auf seinem Smartphone. Damit ist Deutschland auf Platz 8 weltweit.\cite{Fotos:Thiele}
+		Dadurch verdoppelt sich der Datenbestand alle zwei Jahre. 2020 lag er bei etwa 40 Zettabytes. Bis 2025 sollen es schätzungsweise 163 Zettabytes werden.%\cite{DataAge:Peinsel}
+		\begin{quote}
+			"`40 Zettabytes – das entspricht nach Schätzungen der Forscher 57-mal der Menge an Sandkörnern aller Strände der Erde." \cite{Datenvolumen:Juengling}
+		\end{quote}
+		Zudem basiert unsere Gesellschaft mehr und mehr auf den erhobenen Daten. Unternehmen treffen wichtige Geschäftsentscheidungen auf Basis der erhobenen Daten ihrer Produktion, Amazon schlägt Artikel basierend auf dem eigenen Kaufverhalten oder dem anderer Kunden vor und Google Maps berücksichtigt bei der Routenführung den voraussichtlichen Verkehr auf der Strecke.\cite{DataAge:Peinsel}
+		
+	\subsection{Was sind Datenbanken und warum brauchen wir sie?}
+		Datenbanksysteme sind Programme zur digitalen Verwaltung von Daten. Ein Datenbanksystem sorgt für eine effizient, dauerhafte und fehlerfrei Speicherung der Daten und stellt sie bei Bedarf zur Verfügung. \\
+		Datenbanken werden benötigt wenn ein oder mehrere Programme Zugriff auf ein zentralen Datensatz brauchen. 
+
+\section{Varianten von Datenbanken}
+	Für verschiedene Anwendungsbereiche bedarf es unterschiedlicher Strukturierung der Daten.\\
+	So gibt es zum Beispiel Anwendungsfälle bei denen eine feste Struktur der Daten vorauszusehen ist. So erfasst eine Maschine zum Beispiel für jede Schicht die Anzahl der verpackten Gutteile, den Ausschuss und das verarbeitete Material. In einem anderen Anwendungsfall weisen die Datenpunkte beispielsweise eine sehr hohe oder sehr niedrigen bis nicht vorhandenen Anzahl an Verknüpfungen untereinander auf.
+	Deshalb unterscheidet man zwei grundlegende Kategorien von Datenbanksystemen. Die \textbf{relationalen} und die \textbf{nicht relationale} Datenbanken.
+	\subsection{SQL - relationale Datenbanken}
+		Bei den weitverbreiteten relationalen Datenbanken werden Daten nach einem tabellarischen Schema abgelegt, das heißt es werden Daten basierend auf Schlüsseln in Verbindung gebracht. Durch ein sorgfältig gewähltes Schema werden Redundanzen vermieden und eine effiziente Speicherung ermöglicht. SQL-Datenbanken eignen sich folglich besonders gut für Daten, die eine logische Verknüpfung zueinander aufweisen. Die Datenbank läuft auf einem einzigen Server, sprich um die Leistung der Datenbank zu erhöhen muss die Leistung des Servers erhöht werden. Man spricht hierbei von vertikalen Skaling. 
+		\cite{ibm-sql-nosql}\cite{Meier:SQLNoSQLDatenbanken}
+	\subsection{NoSQL - nicht relationale Datenbanken}
+		NoSQL\textit{, zu Deutsch „Nicht nur SQL“, }beschreibt eine nicht relationale Speicherung von Daten. Die Speicherung beruht dabei nicht auf einem festen Tabellenschemata. Unterkategorien der \ac{nRDBMS} sind dokumentbasierte, Key-Value basierte oder aber auch graphbasierend Datenbanken. Im Gegensatz zu SQL-Datenbanksystemen können NoSQL sehr gut mit großen Datenmengen und häufigen Zugriffen umgehen. NoSQL Datenbanken sind dabei horizontal skalierbar, das heißt die Datenbank läuft auf mehreren Servern, auch Nodes genannt. So lässt sich die Last verteilen, eine Ausfallsicherheit gewährleisten oder die Leistung der Datenbank durch einfaches hinzufügen einer Node verbessern. 
+		\cite{ibm-sql-nosql} \cite{Meier:SQLNoSQLDatenbanken}
+		
+\section{SQL-Datenbanken}
+	\subsection{relationales Modell}
+		SQL-/relationale Datenbanken basieren auf dem dem Menschen geläufigen Prinzip von Tabellen. Zum Speichern von Daten wird ein entsprechendes Tabellenschema erstellt. Aus mathematischer Sicht ist eine Relation eine Teilmenge aus dem kartesischen Produkt der Wertebereiche der Attribute:
+		
+		$ R  \subseteq D_{1 } \times D_{2 } \times D_{3 }  \times...\times D_{n}$, wobei $D_{m}$ der Wertebereich (\textit{engl. domain}) des m-ten Attributs ist.
+		Folglich ist ein Tupel in mathematischer Sicht eine Menge an Werten aus den Wertebereichen der Attribute $t=(d_{1}, d_{2}, d_{3}, ...,d_{n} )$.
+		\cite{Meier:SQLNoSQLDatenbanken}
+		In dem folgenden Beispiel sollen Informationen über Schüler gespeichert werden. Folgende Informationen sollen gespeichert werden: Name, Vorname und die Klasse. Jeder Datensatz muss im relationalen Modell eindeutig, mittels eines Schlüssels, referenzierbar sein. Da es aber sein kann das zwei identisch heißende Schüler die selbe Klasse besuchen wird ein zusätzliches, fiktives Attribut einem jeden Schüler zugeordnet um in eindeutig referenzieren zu können, die Schüler-Nr.
+		\begin{longtable}{|c|c|c|c|}
+			\hline
+			Schüler-Nr. & Name & Vorname & Klasse \\
+			\hline
+			1 & Müller & Liara & 10f \\
+			\hline
+			2 & Hausmann & Heinrich & 5a \\
+			\hline
+			... & ... & ... & ... \\
+			\hline
+			\caption{SCHÜLER}
+			\label{table:Schüler}
+		\end{longtable}
+	\cite{Meier:SQLNoSQLDatenbanken}
+	
+	\subsubsection{Schlüssel}
+	Ein Schlüssel ist ein Merkmal oder die kleinstmögliche Merkmalskombination die es erlaubt einen jeden Datensatz einer Tabelle eindeutig zu referenzieren. Häufig werden hierfür fiktive Attribute wie eine laufende Nummer genutzt.
+	\subsubsection{Attribut}
+	Ein Attribut ordnet jedem Datensatz, auch Tupel genannt, einen Wert zu. Dieser Wert stammt dabei aus der dem vorher definierten Wertebereich.
+	\subsubsection{Tupel}
+	Ein Tupel enthält alle Datenpunkte eines Datensatzes. Ein Beispiel eines Tupels aus Tabelle \ref{table:Schüler} ist:\\
+	1	Müller	Liara	10f
+
+	\subsubsection{Relation vs. Tabelle}
+		Im relationalen Modell ist es wichtig zwischen Tabelle und Relationen zu unterscheiden. So ist jede Relation als Tabelle darstellbar, aber nicht jede Tabelle stellt eine Relation da. Zudem können mehrere Tabellen die gleiche Relation darstellen.
+				\cite{Meier:SQLNoSQLDatenbanken}
+		\begin{table}[H]
+			\begin{minipage}{.5\textwidth}
+				\begin{longtable}{|c|c|c|c|}
+					\hline
+					Klasse & Name & Vorname & Schüler-Nr.  \\
+					\hline
+					5a & Hausmann & Heinrich & 2 \\
+					\hline
+					10f  & Müller & Liara &1 \\
+					\hline
+					... & ... & ... & ... \\
+					\hline
+					\caption{SCHÜLER}
+					\label{table:Schüler:flipped}
+				\end{longtable}
+			\end{minipage}
+			\begin{minipage}{.5\textwidth}
+				\begin{longtable}{|c|c|c|c|}
+					\hline
+					56 & 86 & 4 & 78 \\
+					\hline
+					1 & 45 & 56 & 456 \\
+					\hline
+					2 & 7 & 56 & 45 ; 2\\
+					\hline
+					... & ... & ... & ... \\
+					\hline
+					\caption{Zahlen}
+					\label{table:Zahlen}
+				\end{longtable}
+			\end{minipage}
+		\end{table}
+
+		So stellen die Tabellen \ref{table:Schüler} und die Tabelle \ref{table:Schüler:flipped} die selbe Relation da, obwohl es sich um zwei verschiedene Tabellen handelt. Die Reihenfolge der Spalten und Reihen ist irrelevant. Tabelle \ref{table:Zahlen} stellt allerdings keine Relation da.
+		\cite{darwen2009introduction}\\
+		Folgende Anforderungen müssen von einer Relation erfüllt sein:
+		\begin{itemize}
+			\item Jede Relation hat hat eine Kopfzeile, bestehend aus den Attributen und eine Body, eine Menge an Tupeln.
+			\item In einer Relation kann eine Tupel nur maximal einmal vorkommen.
+			\item Die Tupel und Attribute einer Relation sind nicht geordnet.
+			\item Relationen liegen immer in der ersten Normalenform vor. Das heißt das in jeder Attributsposition sich genau ein Wert befindet.
+			\item Über ein Schlüsselattribut oder eine Schlüsselattributskombination lässt sich jeder Tupel eindeutig referenzieren.
+		\end{itemize}
+	
+		\subsubsection{ACID Kriterien}
+	Ein \ac{RDBMS} verfolgen die ACID Kriterien. Diese stellen bestimmte Anforderungen an Änderungsprozesse in Datenbanken.
+	
+	\begin{itemize}
+		\item \textbf{Atomicity:} Jede Transaktion/Änderungsprozess ist atomar. Das heißt jede Transaktion muss vollständig ausgeführt werden, damit das System weiter funktioniert.
+		\item \textbf{Consistency:} Wenn durch eine Transaktion kein gültiger Zustand erreicht wird wird der alte wiederhergestellt. 
+		\item \textbf{Isolation:} Jede Transaktion läuft autark ab. Somit sind Transaktionen verschiedener Anwender voneinander isoliert.
+		\item \textbf{Durability:} Die Daten sind persistent, das heißt sie bleiben dauerhaft gespeichert.
+	\end{itemize}
+	\cite{acid-bigdata} \cite{ali2019comparison}
+	
+	
+	\subsection{SQL}
+		\ac{sql} ist die Standardsprache für relationale Datenbanken. Mit ihr lassen  sich Informationen abfragen, erstellen, verändern und löschen. Die SQL-Befehle lassen sich in drei Kategorien aufspalten:
+		\begin{itemize}
+			\item  \ac{ddl}
+			\item \ac{dml}
+			\item \ac{dcl}
+		\end{itemize}
+	
+		\subsubsection{Syntax}
+		\begin{itemize}
+			\item  Alle \ac{sql} Befehle sind alpha-numerisch berücksichtigen keine Groß- und Kleinschreibung und beginnen mit einem Buchstaben. Sollten zum Beispiel Tabellennamen andere Zeichen enthalten so sind sie in doppelten Anführungszeichen zu schreiben.
+			\item Reihen-, Spalten- , Tabellen-  und Datenbanknamen werden getrennt betrachtet. Eine Spalte kann folglich den selben Namen haben wie die ihr zugehörige Tabelle.
+			\item Kommentare werden durch /* ... */ gekennzeichnet. Mit '--' lässt sich eine ganze Zeile kommentieren.
+			\item \ac{sql} Befehle werden in der Regel in Großbuchstaben geschrieben.
+			\item SQL-Statements enden mit einem ';'.
+		\end{itemize}
+	
+		\ac{sql} untersützt einfache Datentypen wie: INT2 ( 2 bytes), INT4( 4 bytes), Float4 (4 bytes), Float8 (8 bytes) CHAR(n), wobei n die fixe Länge des Strings ist, bei dem die verbleibenden Zeichen mit Leerzeichen aufgefüllt werden, VARCHAR(n), Strings mit variabler Länge mit einem Maximum von n Zeichen. Der Inhalt eines Strings ist in einfachen Anführungszeichen anzugeben.
+		Zudem gibt es Datentypen für Datum, Zeit und Datum und Zeit.
+		
+		\textbf{Häufig genutzte \ac{sql} Befehle sind:}
+		
+		\begin{tabular}{|c|c|}
+			\hline
+			CREATE TABLE & erstellen einer leeren Tabelle  \\
+			\hline
+			DROP TABLE&  löschen einer Tabelle und allen zugehörigen Tupeln\\
+			\hline
+			ALTER TABLE& ändern der Struktur einer Tabelle \\
+			\hline
+			INSERT&  Zeilen oder Ausschnitte einer Zeile zu einer Tabelle hinzufügen\\
+			\hline
+			SELECT&  Abfrage bestehender Daten\\
+			\hline
+			UPDATE& Änderung bestehender Daten \\
+			\hline
+			DELETE&  Löschen bestehender Daten\\
+			\hline
+			ROLLBACK&  rückgängigmachen einer Änderung\\
+			\hline
+			COMMIT&  permanentes Speichern aller angestoßenen Änderungen\\
+			\hline
+			COPY&  kopieren von Daten zwischen Tabellen\\
+			\hline
+		\end{tabular}
+	\\
+	
+	Eine mögliche Beispieloperation wäre somit:
+	\begin{minted}{sql}
+		SELECT name FROM schueler 
+		WHERE jahrgang > 5; 
+	\end{minted}
+		
+		
+\section{NoSQL-Datenbanken}
+
+	\subsection{Historischer Hintergrund}
+	Der Begriff NoSQL wurde 1998 zuerst von Carlo Strozzi für sein \ac{RDBMS} Strozzi NoSQL verwendet. Der Begriff sollte sein \ac{DBMS} von anderen Systemen abgrenzen, die SQL als Interfacesprache nutzten. Im Gegensatz zu den \ac{DBMS}, die wir heute als No-SQL bezeichen beruhte Strozzis \ac{DBMS} jedoch auf dem relationalen Modell \cite{strozziNoSQL}.
+	
+	\subsection{Einführung}
+		Das große Problem von \ac{RDBMS} ist die Skalierbarkeit. Die vielen Sicherheits- und Konsistenzfunktionen von \ac{sql} sind zwar für einige Anwendungen nötig stellen aber auch hohe Leistungsanforderungen an das System. Das wird vor allem kritisch wenn man, wie bei z.B. bei Social Media Plattformen oder großen Websiten mit sehr vielen Usern, Datenmengen im Petabyte-Bereich oder größer verarbeiten muss. Im folgenden werde zwei häufig genutze Unterformen der NoSQL-Datenbanken vorgestellt.
+		
+	\subsection{key-value-Datenbanken}
+		Eine einfache und fast allen Entwicklern geläufige Möglichkeit zur Datenspeicherung ist eine Variable. In \ac{KVDB} wird einem key, vergleichbar mit dem Variablennamen in einer Programmiersprache, ein value/Wert zugeordnet. Dabei ist eine \ac{KVDB} vollkommen frei von festgelegten Strukturen. Eine Vernestung/Verschachtelung oder Referenzen werden allerdings nicht unterstützt. Dadurch können Daten völlig frei gespeichert werden, was eine performante Abfrage und höchste Flexibilität bietet. Allerdings birgt dies, bei schlechter Organisation, auch das Risiko das die Datenbank unübersichtlich wird. Im folgenden Beispiel werden die Daten zweier Schüler gespeichert:
+		
+		\begin{minted}
+			[
+			frame=lines,
+			framesep=2mm,
+			baselinestretch=1.2,
+			bgcolor=LightGray,
+			fontsize=\footnotesize,
+			]
+			{sql}
+db.schueler.save( { schueler_no: "123456", abiturdatum: "12/12/2123",
+jahrgang:7 } );
+db.schueler.save( { schueler_no: "789", abiturdatum: "12/12/1989",
+name:"Simon" } );
+		\end{minted}
+	
+		Die Daten lassen sich mittels einfacher Abfragen abrufen. In dem folgenden Beispiel werden alle Datensätze abgerufen, dessen name Simon ist:
+		
+	\begin{minted}
+	[
+	frame=lines,
+	framesep=2mm,
+	baselinestretch=1.2,
+	bgcolor=LightGray,
+	fontsize=\footnotesize,
+	]
+	{sql}
+db.restaurants.find( {"name" : "Simon" } );
+\end{minted}
+
+		\subsubsection{Eigenschaften}
+		Eine \ac{KVDB} efüllt folgende Eigenschaften:
+		\begin{itemize}
+			\item Eine Menge von referenzierbaren Datenobjekten, den Schlüsseln, ist festgelegt.
+			\item Zu jedem Schlüssel gibt es immer genau ein Datenobjekt das den dem Schlüssel zugeordneten Wert repräsentiert.
+			\item Mittels des Schlüssels lässt sich der zugehörige Wert abrufen.
+		\end{itemize}
+		
+		\ac{KVDB} sind sehr beliebte NoSQL-Datenbanken. Das liegt vorallem daran das sie sehr gut skalierbar sind. Zudem müssen keine Integritätsbedingungen überprüft werden, was eine höchst performante Datenspeicherung und Abfrage ermöglicht. \\
+		Um \ac{KVDB} noch performanter zu gestalten wird auf ein Verbund von Caching und Sharding gesetzt.\\
+		Beim Caching werden regelmäßig oder kürzlich abgefragte bzw. gespeicherte key-value-Paare im RAM gespeichert bevor sie in den langfristigen und persistenten Hintergrundspeicher abgelegt werden.\\
+		Um die Datenbank horizontal, das heißt über mehrere Servernodes, zu skalieren wird die Datenbank in einzelne Teile aufgeteilt. Dieser Prozess wird Sharding genannt. Eine Node, auch Shard genannt, ist dabei für einen festgelegten Raum der Schlüssel zuständig. \\
+		
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\linewidth]{"../Quellen/key value Datenbank verteilt"}
+	\caption[]{verteilte key-value-Datenbank auf Basis von Key Hashing und Sharding}
+	\label{fig:key-value-datenbank-verteilt}
+\end{figure}
+
+		Die Datenbank in \autoref{fig:key-value-datenbank-verteilt} beruht auf drei Clustern. In dem Master-Cluster übernimmt eine Node das Hashing und das Verteilen der Schlüssel auf die anderen Nodes, während die anderen Nodes die key-value-Paare In-Memory, sprich im RAM, speichern. Nebei spiegeln sie die key-value-Paare auf das erste Slave-Cluster, zur persistenten Speicherung. Das zweite Slave-Cluster ist ein Kopie des ersten, das für komplexe Abfragen genutzt werden kann ohne die Performance der Datenbank negativ zu beeinflussen.
+		
+		\subsection{Dokument-Datenbanken}
+			Eine weitere NoSQL Datenbank sind die sogenannten \acp{DDB}. Sie verbinden die \acp{KVDB} mit der Möglichkeit eine Strukturierung der Daten vorzunehmen.  Dafür basieren sie auf zwei Stufen. Die erste Stufe ist praktisch eine \ac{KVDB}, die allerdings keine Datenobjekte sondern Dokumente speichert. Diese Dokumente sind Datensätze mit strukturieden Daten, zum Beispiel im \ac{JSON}-Format.
+			
+			\subsubsection{Eigenschaften}
+				Als \acf{DDB} wird eine Datenbank bezeichnet die folgende Eigenschaften erfüllt:
+				\begin{itemize}
+					\item Sie ist eine \ac{KVDB}.
+					\item Die Werte der Schlüssel sind Datenobjekte und werden Dokumente genannt.
+					\item In den Dokumenten stehen rekursiv-verschachtelte key-value-Paare
+					\item Die Datenstrukturen sind schemafrei.
+				\end{itemize}
+			
+			\subsubsection{MongoDB Intregration in Laravel}
+			
+				Um MongoDB mit Laravel nutzen zu können ist nur ein geringer Aufwand nötig. Im folgenden wird das hizufügen einer MongoDB Datenbank die in der Cloud gehostet wird erklärt. Als erstes muss das PHP MongoDB Modul installiert werden. Unter Arch beispielsweise geht das wie folgt: \mintinline{console}{sudo pacman -S php-mongodb}. Danach muss sichergestellt werden das das neue Modul geladen wird. Dazu muss folgende Zeile in der Datei php.ini auskommentiert sein: \mintinline{console}{extension="mongodb.so"}. Der Speicherort der Datei php.ini variiert je nach Betriebssystem. Bei Arch und vielen anderen Linux Distributionen liegt sie in \mintinline{console}{/etc/php/php.ini} . Schlussendlich muss noch das entsprechende MongoDB Paket zum Laravelprojekt hinzugefügt werden. Das geschieht mit dem PHP Dependecy Manager geht das wie folgt:  \mintinline{console}{composer require jenssegers/mongodb} . Damit Laravel eine Verbindung zur MongoDB Datenbank aufbauen kann müssen noch einen Anweisunge in \mintinline{console}{/config/database.php} ergänzt werden. Folgender Code muss dem connections Objekt ergänzt werden: 
+					\begin{minted}
+					[
+					frame=lines,
+					framesep=2mm,
+					baselinestretch=1.2,
+					bgcolor=LightGray,
+					fontsize=\footnotesize,
+					]
+					{php}
+'mongodb' => [
+	'driver' => 'mongodb',
+	'dsn' => env('MDB_DSN'),
+	'database' => env('MDB_DATABASE', 'homestead'),
+],
+				\end{minted}
+			In der .env Datei wird folgendes ergänzt:
+								\begin{minted}
+				[
+				frame=lines,
+				framesep=2mm,
+				baselinestretch=1.2,
+				bgcolor=LightGray,
+				fontsize=\footnotesize,
+				]
+				{console}
+MDB_CONNECTION=mongodb
+MDB_DATABASE=<Datenbankname>
+MDB_DSN=mongodb+srv://<username>:<password>@<Clustername>.mongodb.net/
+			\end{minted}
+			
+			Nun lässt sich noch die Standarddatenbank von Laravel konfigurieren. Dazu wird der bestehende Eintrag am Anfang der Datei \mintinline{console}{/config/database.php} bei Bedarf zu :\mintinline{php}{'default' => env('DB_CONNECTION', 'mongodb'),} geändert. Standartmäßig nutzt Laravel eine MySQL Datenbank.
+			Sollte es zu Problemen mit dem automatischen Laden der Abhängigkeiten in Laravel kommen so kann folgendes zum \mintinline{php}{'providers'} Objekt in \mintinline{console}{app.php} hinzugefügt werde:\\ \mintinline{php}{Jenssegers\Mongodb\MongodbServiceProvider::class,} . \\Möchte man den Speicherort für ein Model von dem Standardspeicherort abweichen lassen so fügt man folgendes zur Modelklasse hinzu:\\ \mintinline{php}{protected $connection$ = 'mongodb';} .
+			
+				\cite{mogodb-lara}
+			
+			\subsection{CAP Theorem}
+			Das CAP Theorem besagt das das ein verteiltes System nur zwei der drei Charakteristika der CAP Theorie pro Zeit erfüllen kann. Die drei Charakteristika sind dabei: consistency, availlability und partition tolerance. Ein verteiltes System ist ein System das Daten auf mehr als einer Node, ein Server in einem Cluster, speichert. NoSQL-Datenbanken sind fast immer verteilte Systeme, da man  nur so ihr volles Potenzial ausschöpfen kann (vergleiche \autoref{fig:key-value-datenbank-verteilt}). Im Bezug auf ein \ac{nRDBMS} sind die drei Charakteristika der CAP Theorie die folgenden:
+			
+			\textbf{Consistency:} Alle Clients der Datenbank greifen auf die selben Daten zu, egal mit welcher Node der Datenbank sie verbunden sind.Um dies zu gewährleisten müssen die Daten die auf eine Node geschrieben werden zeitgleich auf alle anderen Nodes geschrieben werden.\\
+			\textbf{Availability:} Jede Node des Datenbankclusters ist in der Lage eine Anfrage zu bearbeiten. Die Datenbank ist auch voll funktionsfähig wenn eine oder mehrere Nodes nicht erreichbar sind.\\
+			\textbf{Partition tolerance:}  Die Datenbank ist auch dann voll funktionstüchtig wenn Pakete zwischen den Nodes gar nicht oder nur verspätet ankommen.
+		
+		
+\section{Vergleich von SQL- und NoSQL-Datenbanken}
+	\subsubsection{Wann sind \ac{RDBMS} geeignet?}
+		\ac{RDBMS} sind vorallem dann gut geeignet wenn die Daten einen hohen Grad an Verknüpfungen aufweisen oder die ACID-Kriterien erfüllt werden müssen. Für einige Anwendungen wie zum Beispiel Bankanwendungen ist die Erfüllung der ACID-Kriterien zwingend erforderlich. Zudem lassen sich  Mittels SQL komplexe ad-hoc Abfragen einfach gestalten. Die feste Struktur ist zudem gut geeignet wenn keine Änderungen in der Menge oder der Art der Daten die gespeichert werden sollen zu erwarten ist. Des weiteren bieten \ac{RDBMS} mit SQL eine standartisierde query language, was es Entwicklern ermöglicht das \ac{RDBMS} zu wechseln ohne eine neue query language lernen zu müssen oder große Änderung in ihren Anwendungen vornehmen zu müssen.
+		\cite{ibm-sql-nosql}
+	\subsubsection{Wann sind \ac{nRDBMS} geeignet?}
+		Ein \ac{nRDBMS} ist besonders dann gut geeignet wenn sehr große Datenmengen mit wenig Verknüpfungen und vielen Änderungen gespeichert werden sollen. Zudem bietet sie durch ihre Fähigkeit des horizontalen skalierens große Vorteile beim Cloud Computing. Wird zum Beispiel ein weiterer Cachingserver benötigt um einer erhöhten Nachfrage nachzukommen kann dieser einfach beim Cloud Service Provider gebucht werden um das Cluster erweitern. Nimmt der Bedarf wieder ab kann ein Server wieder abbestellt werden um Kosten zu sparen. Ein weitere Vorteil besteht wenn nur sehr kurze Entwicklungszeiten gegeben sind. Wird zum Beispiel eine Anwendung innerhalb von wenigen Wochen entwickelt kann es vorkommen das keine Zeit frei ist um eine sorgfältig Vorrausplanung der Datenbank vorzunehmen. Stattdessen entsteht und wächst sie mit der Entwicklung der Anwendung einfach mit.
+		\cite{ibm-sql-nosql}
+\newpage
+\clearpage
+\pagenumbering{Roman}
+\setcounter{page}{\theSeitenzahlSpeicher}
+%\blindtext[3]
+
+
+%mit Bibtex gearbeitet:
+%Falls die Referenzen nicht funktionieren, mehrmals kompilieren mit F6 - F11 - F6 - F6 und dann F1 (Reihenfolge beachten) versuchen
+%google scolar dann auf zitieren Bixtex klicken und copy paste
+%thebibliography=Datei auf die Zugegriffen wird
+%\large If you want to learn about linear and semiparametric regression, you should try \cite{Regression}, whereas \cite{Hobbit} will be disappointing in this context.
+
+
+\section{Literaturverzeichnis}
+
+\bibliographystyle{gerplain}
+\renewcommand{\refname}{} 
+\bibliography{bibba}
+%\bibliographystyle{unsrt}
+
+
+%\printbibliography
+
+\newpage
+
+
+\appendix %Anhang
+\pagenumbering{arabic}
+\section{Anhang}
+
+\subsection{MongoDB Entwicklungsdatenbank in der Cloud hosten}
+
+Zu Entwicklung- und Testzwecken lässt sich eine MongoDB Datenbank einfach und kostenfrei in der Cloud hosten. Dazu zu \url{https://www.mongodb.com/cloud/atlas} gehen und ein Konto erstellen. Nach dem ersten anmelden müssen ein paar Fragen beantwortet werden wie man plant MongoDB zu nutzen. Danach wählt man aus den Deployment Optionen Shared aus. Als Cloudprovider wird der Provider der Wahl ausgewählt und ein Standort gewählt der nahe der eigenen geographischen Lage ist. Die restlichen Einstellungen können auf den Standardeinstellungen belassen werden. Das sind, Stand 17.11.2021, Cluster Tier: M0 Sandbox(Shared RAM, 512MB Storage), Additional Settings: MongoDB 4.4, No Backup und Cluster Name: Cluster0. Hat man das Cluster erstellt dauert es ein paar Minuten bis es zur Verfügung steht. Steht das Cluster zur Vefügung geht man auf den Punkt Connect und fügt durch einen Klick auf Add Your Current IP Address seine IP Adresse zu der Whitelist der IP Adressen hinzu, die sich mit dem Cluster verbinden dürfen. Danach wird ein Datenbanknutzer erstellt. Danach wählt man unter den Verbindungsoptionen MondoDB Connect aus und kopiert den connection string in das Feld \mintinline{console}{DB_DSN} in der .env Datei. das Feld \mintinline{console}{DB_Database} wird mit dem gewünschten Datenbanknamen ausgefüllt.
+
+\subsection{Postman API Client}
+
+Postman bietet eine Möglichkeit API's leicht mit einer grafischen Oberfläche zu testen. Postman ist erhältlich über den Pakagemanger der Wahl oder unter \url{https://app.getpostman.com/app/download/win64}. In der Oberfläche von Postman lässt sich die HTML Methoden und eine URL angeben. Unter dem Punkt Header muss der Eintrage Accept - application/json ergänzt werden. Im Body lassen sich bei Bedarf zum Beispiel JSON-Daten mitschicken.
+
+\subsection{JSON}
+	JSON ist die Abkürzung für \textbf{J}ava\textbf{S}cript\textbf{O}bject\textbf{N}otation. Die Syntax ist identisch zu dem Code von Objekten in JavaScript. Es gelten folgende Regel:
+	\begin{itemize}
+		\item Daten werden in key-value-Paaren gespeichert
+		\item Daten werden mit Kommata getrennt.
+		\item geschwungene Klammern werden verwendet um Objekte zu speichern.
+		\item eckige Klammern werden verwendet um Array zu speicher.
+	\end{itemize}
+
+\cite{w3json}
+
+\newpage
+
+\section{Eigenständigkeitserklärung}
+``Ich versichere, dass ich die Arbeit selbständig und ohne Benutzung anderer als der angegebenen Hilfsmittel angefertigt habe. Alle Stellen, die wörtlich oder sinngemäß aus Veröffentlichungen oder anderen Quellen entnommen sind, sind als solche kenntlich gemacht.''
+\paragraph{}$~~$\\
+\paragraph{}$~~$\\
+\vspace{50pt} 
+\noindent\rule{5cm}{.4pt}\hfill\rule{5cm}{.4pt}\par 
+\noindent Ort, Datum \hfill Unterschrift 
+\end{document}
+
