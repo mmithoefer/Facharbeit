@@ -353,8 +353,8 @@ MDB_DSN=mongodb+srv://<username>:<password>@<Clustername>.mongodb.net/
 			Das CAP Theorem besagt, dass das ein verteiltes System nur zwei der drei Charakteristika der CAP Theorie pro Zeit erfüllen kann. Die drei Charakteristika sind dabei: consistency, availlability und partition tolerance. Ein verteiltes System ist ein System, das Daten auf mehr als einer Node, ein Server in einem Cluster, speichert. NoSQL-Datenbanken sind fast immer verteilte Systeme, da man  nur so ihr volles Potenzial ausschöpfen kann (vergleiche \autoref{fig:key-value-datenbank-verteilt}). Im Bezug auf ein \ac{nRDBMS} sind die drei Charakteristika der CAP Theorie die folgenden:
 			
 			\textbf{Consistency:} Alle Clients der Datenbank greifen auf die selben Daten zu, egal mit welcher Node der Datenbank sie verbunden sind.Um dies zu gewährleisten müssen die Daten, die auf eine Node geschrieben werden, zeitgleich auf alle anderen Nodes geschrieben werden.\\
-			\textbf{Availability:} Jede Node des Datenbankclusters ist in der Lage eine Anfrage zu bearbeiten. Die Datenbank ist auch voll funktionsfähig wenn eine oder mehrere Nodes nicht erreichbar sind.\\
-			\textbf{Partition tolerance:}  Die Datenbank ist auch dann voll funktionstüchtig wenn Pakete zwischen den Nodes gar nicht oder nur verspätet ankommen.
+			\textbf{Availability:} Jede Node des Datenbankclusters ist in der Lage eine Anfrage zu bearbeiten. Die Datenbank ist auch voll funktionsfähig, wenn eine oder mehrere Nodes nicht erreichbar sind.\\
+			\textbf{Partition tolerance:}  Die Datenbank ist auch dann voll funktionstüchtig, wenn Pakete zwischen den Nodes gar nicht oder nur verspätet ankommen.
 		
 		
 \section{Vergleich von SQL- und NoSQL-Datenbanken}
